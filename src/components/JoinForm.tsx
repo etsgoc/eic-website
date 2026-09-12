@@ -125,6 +125,13 @@ export default function JoinForm() {
       <button type="submit" disabled={status === "submitting"} className="btn btn-accent self-start">
         {status === "submitting" ? "Sending..." : "Submit application"}
       </button>
+
+      <p className="text-sm text-ink-500">
+        Already a member?{" "}
+        <a href="/login" className="font-medium text-ink-800 hover:text-ink-600">
+          Log in instead
+        </a>
+      </p>
     </form>
   );
 }

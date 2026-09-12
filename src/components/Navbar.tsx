@@ -1,9 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import Logo from "./Logo";
+import type { SessionUser } from "@/lib/types";
 
 const links = [
   { href: "/about", label: "About" },
@@ -14,9 +15,37 @@ const links = [
   { href: "/partners", label: "Partners" }
 ];
 
+function initials(name: string) {
+  return name
+    .split(" ")
+    .map((part) => part[0])
+    .filter(Boolean)
+    .slice(0, 2)
+    .join("")
+    .toUpperCase();
+}
+
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [user, setUser] = useState<SessionUser | null>(null);
   const pathname = usePathname();
+
+  // Re-checked on every navigation, not just once on mount, so the header
+  // updates right away after logging in or logging out and redirecting.
+  useEffect(() => {
+    let cancelled = false;
+    fetch("/api/auth/session")
+      .then((response) => response.json())
+      .then((body) => {
+        if (!cancelled) setUser(body.user ?? null);
+      })
+      .catch(() => {
+        if (!cancelled) setUser(null);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [pathname]);
 
   return (
     <header className="sticky top-0 z-50 border-b border-ink-100 bg-paper/95 backdrop-blur">
@@ -42,12 +71,26 @@ export default function Navbar() {
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
-          <Link href="/login" className="text-[15px] text-ink-500 hover:text-ink-900">
-            Log in
-          </Link>
-          <Link href="/join" className="btn btn-accent">
-            Join EIC
-          </Link>
+          {user ? (
+            <Link
+              href="/dashboard"
+              className="flex items-center gap-2.5 rounded border border-ink-200 py-1.5 pl-1.5 pr-3.5 text-[15px] text-ink-800 hover:border-ink-800"
+            >
+              <span className="flex h-7 w-7 items-center justify-center rounded-full bg-ink-800 font-display text-xs font-semibold text-paper">
+                {initials(user.full_name)}
+              </span>
+              Account
+            </Link>
+          ) : (
+            <>
+              <Link href="/login" className="text-[15px] text-ink-500 hover:text-ink-900">
+                Log in
+              </Link>
+              <Link href="/join" className="btn btn-accent">
+                Join EIC
+              </Link>
+            </>
+          )}
         </div>
 
         <button
@@ -93,12 +136,27 @@ export default function Navbar() {
             ))}
           </ul>
           <div className="mt-5 flex flex-col gap-3 border-t border-ink-100 pt-5">
-            <Link href="/login" onClick={() => setOpen(false)} className="btn btn-ghost">
-              Log in
-            </Link>
-            <Link href="/join" onClick={() => setOpen(false)} className="btn btn-accent">
-              Join EIC
-            </Link>
+            {user ? (
+              <Link
+                href="/dashboard"
+                onClick={() => setOpen(false)}
+                className="flex items-center gap-2.5 rounded border border-ink-200 px-3.5 py-2.5 text-[15px] text-ink-800"
+              >
+                <span className="flex h-7 w-7 items-center justify-center rounded-full bg-ink-800 font-display text-xs font-semibold text-paper">
+                  {initials(user.full_name)}
+                </span>
+                Account
+              </Link>
+            ) : (
+              <>
+                <Link href="/login" onClick={() => setOpen(false)} className="btn btn-ghost">
+                  Log in
+                </Link>
+                <Link href="/join" onClick={() => setOpen(false)} className="btn btn-accent">
+                  Join EIC
+                </Link>
+              </>
+            )}
           </div>
         </nav>
       )}

@@ -58,6 +58,13 @@ export default function LoginForm() {
         {status === "submitting" ? "Logging in..." : "Log in"}
       </button>
 
+      <p className="text-sm text-ink-500">
+        Not a member yet?{" "}
+        <a href="/join" className="font-medium text-ink-800 hover:text-ink-600">
+          Apply to join EIC
+        </a>
+      </p>
+
       <div className="border-t border-ink-100 pt-5 text-sm text-ink-500">
         <p className="font-medium text-ink-700">Trying the demo</p>
         <p className="mt-1">
