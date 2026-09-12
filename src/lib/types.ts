@@ -67,6 +67,7 @@ export interface ProgramStage {
 }
 
 export interface MembershipApplication {
+  id?: string;
   full_name: string;
   email: string;
   album_number: string;
@@ -74,13 +75,18 @@ export interface MembershipApplication {
   year_of_study: string;
   interest_area: string;
   motivation: string;
+  status?: "pending" | "accepted" | "declined";
+  created_at?: string;
 }
 
 export interface ContactMessage {
+  id?: string;
   name: string;
   email: string;
   subject: string;
   message: string;
+  is_read?: boolean;
+  created_at?: string;
 }
 
 export interface SessionUser {
@@ -89,4 +95,31 @@ export interface SessionUser {
   email: string;
   role_title: string;
   is_admin: boolean;
+}
+
+// A member's registration for a single event. One row per member, per
+// event.
+export interface EventRegistration {
+  id: string;
+  event_id: string;
+  member_id: string;
+  full_name: string;
+  email: string;
+  created_at: string;
+}
+
+// A venture or cofounder search posted by a member, browsable by every
+// other member. This is the "find a cofounder or team" part of the Team
+// stage in the club's own program, made into something members can
+// actually use rather than just read about.
+export interface VenturePost {
+  id: string;
+  member_id: string;
+  member_name: string;
+  contact_email: string;
+  title: string;
+  one_liner: string;
+  stage: string;
+  looking_for: string;
+  created_at: string;
 }

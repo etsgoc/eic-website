@@ -12,7 +12,8 @@ export async function POST(request: Request) {
     );
   }
 
-  const result = await saveRecord("membership_applications", {
+  const result = await saveRecord("membership_applications", "membership-applications.json", {
+    id: crypto.randomUUID(),
     full_name: body.full_name,
     email: body.email,
     album_number: body.album_number ?? "",

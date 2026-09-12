@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import type { EventItem } from "@/lib/types";
 
 function formatDateParts(iso: string) {
@@ -11,8 +12,18 @@ function formatDateParts(iso: string) {
   return { month, day, time };
 }
 
-export default function EventRow({ event }: { event: EventItem }) {
+interface EventRowProps {
+  event: EventItem;
+  registeredCount?: number;
+  action?: ReactNode;
+}
+
+export default function EventRow({ event, registeredCount, action }: EventRowProps) {
   const { month, day, time } = formatDateParts(event.start_time);
+  const spotsLabel =
+    event.capacity != null
+      ? `${registeredCount ?? 0} of ${event.capacity} spots taken`
+      : null;
 
   return (
     <article className="flex flex-col gap-4 border-b border-ink-100 py-7 first:pt-0 last:border-b-0 md:flex-row md:gap-8">
@@ -38,8 +49,10 @@ export default function EventRow({ event }: { event: EventItem }) {
         <div className="mt-3 flex flex-wrap gap-x-5 gap-y-1 text-sm text-ink-500">
           <span>{time}</span>
           <span>{event.location}</span>
-          {event.capacity && <span>{event.capacity} spots</span>}
+          {spotsLabel && <span>{spotsLabel}</span>}
         </div>
+
+        {action && <div className="mt-4">{action}</div>}
       </div>
     </article>
   );

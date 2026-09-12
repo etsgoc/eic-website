@@ -27,6 +27,7 @@ export default function Footer({ site }: { site: SiteConfig }) {
           <p className="mb-3 text-sm font-medium text-ink-900">Stay in touch</p>
           <ul className="flex flex-col gap-2.5 text-[15px] text-ink-500">
             <li><Link href="/events" className="hover:text-ink-900">Events</Link></li>
+            <li><Link href="/ventures" className="hover:text-ink-900">Ventures</Link></li>
             <li><Link href="/announcements" className="hover:text-ink-900">Announcements</Link></li>
             <li><Link href="/contact" className="hover:text-ink-900">Contact</Link></li>
           </ul>

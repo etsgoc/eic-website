@@ -9,6 +9,13 @@
 --
 -- Run this whole file once, top to bottom, in a fresh Supabase project.
 
+-- A note on event_registrations and ventures specifically: the website's
+-- own API routes write to these two tables using the Supabase service role
+-- key, after checking the member's own login session themselves, so those
+-- writes bypass the policies below entirely. The policies still matter if
+-- anything else, now or later, talks to these tables using a normal user
+-- key instead.
+
 create extension if not exists "uuid-ossp";
 
 -- ---------------------------------------------------------------------
@@ -213,6 +220,43 @@ create policy "Admins manage programs"
   using (exists (
     select 1 from public.profiles where id = auth.uid() and is_admin = true
   ));
+
+-- ---------------------------------------------------------------------
+-- ventures: the member facing venture and cofounder board, where members
+-- post what they are building and what kind of teammate they are looking
+-- for. This is the practical, working version of the club's own Team
+-- stage.
+-- ---------------------------------------------------------------------
+create table if not exists public.ventures (
+  id uuid primary key default uuid_generate_v4(),
+  member_id uuid not null references public.profiles (id) on delete cascade,
+  member_name text not null,
+  contact_email text not null,
+  title text not null,
+  one_liner text not null,
+  stage text not null default 'idea',
+  looking_for text not null,
+  created_at timestamptz not null default now()
+);
+
+alter table public.ventures enable row level security;
+
+create policy "Ventures are public"
+  on public.ventures for select
+  using (true);
+
+create policy "Members can post their own venture"
+  on public.ventures for insert
+  with check (auth.uid() = member_id);
+
+create policy "Members can remove their own venture, admins can remove any"
+  on public.ventures for delete
+  using (
+    auth.uid() = member_id
+    or exists (
+      select 1 from public.profiles where id = auth.uid() and is_admin = true
+    )
+  );
 
 -- ---------------------------------------------------------------------
 -- membership_applications: submissions from the Join page

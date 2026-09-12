@@ -12,7 +12,8 @@ export async function POST(request: Request) {
     );
   }
 
-  const result = await saveRecord("contact_messages", {
+  const result = await saveRecord("contact_messages", "contact-messages.json", {
+    id: crypto.randomUUID(),
     name: body.name,
     email: body.email,
     subject: body.subject ?? "General enquiry",
