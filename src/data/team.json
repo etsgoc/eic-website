@@ -1,0 +1,101 @@
+[
+  {
+    "id": "t-0001",
+    "title": "Founder",
+    "category": "founder",
+    "description": "Started EIC and prepared the founding documents submitted to the Dean's office. Will stand for President once elections open.",
+    "member_name": "Edward Tinotenda Sithole",
+    "member_bio": "IT student, Computer Science, album number 50139.",
+    "member_avatar_url": null,
+    "display_order": 0,
+    "is_filled": true
+  },
+  {
+    "id": "t-0002",
+    "title": "Club Patron",
+    "category": "patron",
+    "description": "A WSEI staff or faculty member who supports and supervises EIC on behalf of the university.",
+    "member_name": null,
+    "member_bio": null,
+    "member_avatar_url": null,
+    "display_order": 1,
+    "is_filled": false
+  },
+  {
+    "id": "t-0003",
+    "title": "President",
+    "category": "leadership",
+    "description": "Leads EIC, chairs the leadership team and represents the club to WSEI and outside partners.",
+    "member_name": null,
+    "member_bio": null,
+    "member_avatar_url": null,
+    "display_order": 2,
+    "is_filled": false
+  },
+  {
+    "id": "t-0004",
+    "title": "Vice President of Entrepreneurship",
+    "category": "leadership",
+    "description": "Runs the Entrepreneurship Team and its founder support programs.",
+    "member_name": null,
+    "member_bio": null,
+    "member_avatar_url": null,
+    "display_order": 3,
+    "is_filled": false
+  },
+  {
+    "id": "t-0005",
+    "title": "Vice President of Innovation",
+    "category": "leadership",
+    "description": "Runs the Innovation Team, including innovation challenges and research links.",
+    "member_name": null,
+    "member_bio": null,
+    "member_avatar_url": null,
+    "display_order": 4,
+    "is_filled": false
+  },
+  {
+    "id": "t-0006",
+    "title": "Vice President of Partnerships",
+    "category": "leadership",
+    "description": "Builds relationships with companies, investors, mentors and other universities.",
+    "member_name": null,
+    "member_bio": null,
+    "member_avatar_url": null,
+    "display_order": 5,
+    "is_filled": false
+  },
+  {
+    "id": "t-0007",
+    "title": "Vice President of Community",
+    "category": "leadership",
+    "description": "Leads recruitment, communication and the overall member experience.",
+    "member_name": null,
+    "member_bio": null,
+    "member_avatar_url": null,
+    "display_order": 6,
+    "is_filled": false
+  },
+  {
+    "id": "t-0008",
+    "title": "Treasurer",
+    "category": "leadership",
+    "description": "Keeps clear records of EIC income and spending.",
+    "member_name": null,
+    "member_bio": null,
+    "member_avatar_url": null,
+    "display_order": 7,
+    "is_filled": false
+  },
+  {
+    "id": "t-0009",
+    "title": "Secretary",
+    "category": "leadership",
+    "description": "Manages club records, meeting notes and day to day operations.",
+    "member_name": null,
+    "member_bio": null,
+    "member_avatar_url": null,
+    "display_order": 8,
+    "is_filled": false
+  }
+]

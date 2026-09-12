@@ -1,0 +1,26 @@
+[
+  {
+    "id": "a-0003",
+    "title": "EIC founding proposal submitted to the Dean's office",
+    "body": "The founding documents, covering the constitution, roles, the WSEI partnership framework and the strategic plan, have been submitted for review. Members will be updated as soon as EIC is officially recognized.",
+    "is_pinned": true,
+    "published_at": "2026-09-10T09:00:00.000Z",
+    "cover_image_url": null
+  },
+  {
+    "id": "a-0002",
+    "title": "First round of leadership elections coming soon",
+    "body": "Once EIC is recognized, we will open nominations for President, the four Vice President roles, Treasurer and Secretary. Details on how to stand and how to vote will follow here.",
+    "is_pinned": false,
+    "published_at": "2026-09-08T14:30:00.000Z",
+    "cover_image_url": null
+  },
+  {
+    "id": "a-0001",
+    "title": "Welcome to EIC",
+    "body": "This is the first announcement on the new EIC website. Over the coming weeks we will add real events, open the membership form and start building the WSEI entrepreneurship community from the ground up.",
+    "is_pinned": false,
+    "published_at": "2026-09-01T10:00:00.000Z",
+    "cover_image_url": null
+  }
+]

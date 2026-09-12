@@ -1,0 +1,38 @@
+[
+  {
+    "id": "e-0001",
+    "title": "EIC launch and first meetup",
+    "description": "The first open meetup for anyone at WSEI who wants to build something. Meet the founding team, hear the plan for the club and put your name down for the areas you want to get involved in.",
+    "location": "WSEI University, room to be confirmed",
+    "start_time": "2026-10-06T17:00:00.000Z",
+    "end_time": "2026-10-06T19:00:00.000Z",
+    "cover_image_url": null,
+    "registration_url": null,
+    "capacity": 80,
+    "is_featured": true
+  },
+  {
+    "id": "e-0002",
+    "title": "Idea to pitch: a first workshop",
+    "description": "A practical session on turning a rough idea into something you can explain in two minutes. Bring a problem you care about, even if you do not have a solution yet.",
+    "location": "WSEI University, room to be confirmed",
+    "start_time": "2026-10-20T17:00:00.000Z",
+    "end_time": "2026-10-20T19:00:00.000Z",
+    "cover_image_url": null,
+    "registration_url": null,
+    "capacity": 40,
+    "is_featured": false
+  },
+  {
+    "id": "e-0003",
+    "title": "Meet Imaguru",
+    "description": "An introductory session with Imaguru, our neighbors on the same street, on how their coaching and investment programs work and how EIC members can get involved.",
+    "location": "WSEI University, room to be confirmed",
+    "start_time": "2026-11-10T17:00:00.000Z",
+    "end_time": "2026-11-10T18:30:00.000Z",
+    "cover_image_url": null,
+    "registration_url": null,
+    "capacity": 60,
+    "is_featured": false
+  }
+]

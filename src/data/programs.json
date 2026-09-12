@@ -1,0 +1,58 @@
+[
+  {
+    "id": "discover",
+    "title": "Discover",
+    "stage_order": 1,
+    "description": "Talks, founder stories and industry visits that help you find a problem worth solving.",
+    "icon": "compass"
+  },
+  {
+    "id": "idea",
+    "title": "Idea",
+    "stage_order": 2,
+    "description": "Shape a real problem, a real customer and a first possible solution.",
+    "icon": "bulb"
+  },
+  {
+    "id": "team",
+    "title": "Team",
+    "stage_order": 3,
+    "description": "Find a cofounder, developer, designer or teammate from inside the club.",
+    "icon": "people"
+  },
+  {
+    "id": "validate",
+    "title": "Validate",
+    "stage_order": 4,
+    "description": "Test the idea against real customers, competitors and pricing before you build.",
+    "icon": "check"
+  },
+  {
+    "id": "build",
+    "title": "Build",
+    "stage_order": 5,
+    "description": "Put together a first working version or prototype with support from mentors.",
+    "icon": "hammer"
+  },
+  {
+    "id": "business",
+    "title": "Business",
+    "stage_order": 6,
+    "description": "Work out the model, the legal structure, the finances and how you will sell.",
+    "icon": "briefcase"
+  },
+  {
+    "id": "fund",
+    "title": "Fund",
+    "stage_order": 7,
+    "description": "Get warm introductions to competitions, grants, angels and funds through EIC.",
+    "icon": "coin"
+  },
+  {
+    "id": "launch",
+    "title": "Launch",
+    "stage_order": 8,
+    "description": "Register the company, win the first customers and start hiring.",
+    "icon": "rocket"
+  }
+]
